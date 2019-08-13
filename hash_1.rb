@@ -5,13 +5,8 @@ family = {
   aunts: ["mary", "sally", "susan"]
 }
 
-sisters = family.select do |x, y|
-  x == :sisters
+close = family.select do |rank, members|
+  rank == :sisters ||rank == :brothers
 end
 
-brothers = family.select do |x, y|
-  x == :brothers
-end
-
-immediate = sisters.merge!(brothers)
-puts immediate
+family.has_key?("uncles")
